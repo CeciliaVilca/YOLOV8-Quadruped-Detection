@@ -1,0 +1,1983 @@
+{
+    "100.jpg": [],
+    "1000.jpg": [
+        {
+            "box": [
+                653,
+                34,
+                1346,
+                1203
+            ],
+            "confidence": 0.2445337176322937,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                652,
+                27,
+                1347,
+                1195
+            ],
+            "confidence": 0.17512787878513336,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                1429,
+                1319,
+                2045,
+                1530
+            ],
+            "confidence": 0.1363513469696045,
+            "class_id": 28,
+            "class_name": "suitcase"
+        }
+    ],
+    "1001.jpg": [
+        {
+            "box": [
+                654,
+                36,
+                1346,
+                1210
+            ],
+            "confidence": 0.26563018560409546,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                651,
+                34,
+                1347,
+                1212
+            ],
+            "confidence": 0.16290970146656036,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1002.jpg": [
+        {
+            "box": [
+                647,
+                35,
+                1348,
+                1209
+            ],
+            "confidence": 0.2657262682914734,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                652,
+                35,
+                1345,
+                1206
+            ],
+            "confidence": 0.18357253074645996,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1003.jpg": [
+        {
+            "box": [
+                655,
+                36,
+                1344,
+                1206
+            ],
+            "confidence": 0.22146208584308624,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                651,
+                37,
+                1346,
+                1209
+            ],
+            "confidence": 0.15813423693180084,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                657,
+                41,
+                1345,
+                1208
+            ],
+            "confidence": 0.1445803940296173,
+            "class_id": 61,
+            "class_name": "toilet"
+        }
+    ],
+    "1004.jpg": [
+        {
+            "box": [
+                654,
+                32,
+                1977,
+                1225
+            ],
+            "confidence": 0.21451561152935028,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1005.jpg": [
+        {
+            "box": [
+                656,
+                35,
+                1347,
+                1204
+            ],
+            "confidence": 0.2643973231315613,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                654,
+                35,
+                1349,
+                1198
+            ],
+            "confidence": 0.11556430906057358,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1006.jpg": [
+        {
+            "box": [
+                658,
+                33,
+                1335,
+                1194
+            ],
+            "confidence": 0.1853831261396408,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1007.jpg": [
+        {
+            "box": [
+                661,
+                35,
+                1346,
+                1198
+            ],
+            "confidence": 0.1495695412158966,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                1433,
+                1368,
+                2045,
+                1525
+            ],
+            "confidence": 0.11001857370138168,
+            "class_id": 28,
+            "class_name": "suitcase"
+        }
+    ],
+    "1008.jpg": [
+        {
+            "box": [
+                659,
+                35,
+                1345,
+                1194
+            ],
+            "confidence": 0.21932432055473328,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                657,
+                33,
+                1340,
+                1196
+            ],
+            "confidence": 0.1709807962179184,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                660,
+                38,
+                1344,
+                1197
+            ],
+            "confidence": 0.10285498946905136,
+            "class_id": 61,
+            "class_name": "toilet"
+        }
+    ],
+    "1009.jpg": [
+        {
+            "box": [
+                659,
+                35,
+                1345,
+                1199
+            ],
+            "confidence": 0.2109849750995636,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                1432,
+                1369,
+                2044,
+                1526
+            ],
+            "confidence": 0.12033736705780029,
+            "class_id": 28,
+            "class_name": "suitcase"
+        },
+        {
+            "box": [
+                658,
+                41,
+                1339,
+                1197
+            ],
+            "confidence": 0.10228513926267624,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "101.jpg": [],
+    "1010.jpg": [
+        {
+            "box": [
+                659,
+                36,
+                1344,
+                1191
+            ],
+            "confidence": 0.2012261599302292,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                658,
+                39,
+                1339,
+                1188
+            ],
+            "confidence": 0.18244120478630066,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                1433,
+                1369,
+                2044,
+                1526
+            ],
+            "confidence": 0.12029949575662613,
+            "class_id": 28,
+            "class_name": "suitcase"
+        }
+    ],
+    "1011.jpg": [
+        {
+            "box": [
+                659,
+                34,
+                1346,
+                1196
+            ],
+            "confidence": 0.19433793425559998,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                657,
+                33,
+                1341,
+                1197
+            ],
+            "confidence": 0.12105652689933777,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                1433,
+                1372,
+                2045,
+                1526
+            ],
+            "confidence": 0.1185537576675415,
+            "class_id": 28,
+            "class_name": "suitcase"
+        }
+    ],
+    "1012.jpg": [
+        {
+            "box": [
+                1431,
+                1350,
+                2045,
+                1518
+            ],
+            "confidence": 0.19014675915241241,
+            "class_id": 28,
+            "class_name": "suitcase"
+        },
+        {
+            "box": [
+                659,
+                35,
+                1338,
+                1198
+            ],
+            "confidence": 0.1483001559972763,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                661,
+                38,
+                1334,
+                1199
+            ],
+            "confidence": 0.1400652974843979,
+            "class_id": 28,
+            "class_name": "suitcase"
+        },
+        {
+            "box": [
+                698,
+                1305,
+                851,
+                1441
+            ],
+            "confidence": 0.11326645314693451,
+            "class_id": 14,
+            "class_name": "bird"
+        }
+    ],
+    "1013.jpg": [
+        {
+            "box": [
+                659,
+                37,
+                1338,
+                1208
+            ],
+            "confidence": 0.24241547286510468,
+            "class_id": 28,
+            "class_name": "suitcase"
+        },
+        {
+            "box": [
+                1430,
+                1346,
+                2044,
+                1516
+            ],
+            "confidence": 0.16412633657455444,
+            "class_id": 28,
+            "class_name": "suitcase"
+        },
+        {
+            "box": [
+                658,
+                34,
+                1341,
+                1205
+            ],
+            "confidence": 0.1053847000002861,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1014.jpg": [
+        {
+            "box": [
+                660,
+                37,
+                1337,
+                1208
+            ],
+            "confidence": 0.16194666922092438,
+            "class_id": 28,
+            "class_name": "suitcase"
+        },
+        {
+            "box": [
+                657,
+                35,
+                1337,
+                1210
+            ],
+            "confidence": 0.14902129769325256,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                658,
+                35,
+                1341,
+                1207
+            ],
+            "confidence": 0.12562216818332672,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1015.jpg": [
+        {
+            "box": [
+                660,
+                37,
+                1335,
+                1199
+            ],
+            "confidence": 0.17044185101985931,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                658,
+                34,
+                1338,
+                1201
+            ],
+            "confidence": 0.13216595351696014,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1016.jpg": [
+        {
+            "box": [
+                659,
+                32,
+                1333,
+                1202
+            ],
+            "confidence": 0.20377326011657715,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                661,
+                35,
+                1329,
+                1202
+            ],
+            "confidence": 0.10654604434967041,
+            "class_id": 61,
+            "class_name": "toilet"
+        }
+    ],
+    "1017.jpg": [
+        {
+            "box": [
+                653,
+                28,
+                1350,
+                1196
+            ],
+            "confidence": 0.37408873438835144,
+            "class_id": 39,
+            "class_name": "bottle"
+        },
+        {
+            "box": [
+                655,
+                33,
+                1351,
+                1197
+            ],
+            "confidence": 0.10072910040616989,
+            "class_id": 75,
+            "class_name": "vase"
+        }
+    ],
+    "1018.jpg": [
+        {
+            "box": [
+                652,
+                33,
+                1349,
+                1192
+            ],
+            "confidence": 0.2912123501300812,
+            "class_id": 39,
+            "class_name": "bottle"
+        },
+        {
+            "box": [
+                655,
+                26,
+                1350,
+                1190
+            ],
+            "confidence": 0.14466066658496857,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                233,
+                340,
+                703,
+                1143
+            ],
+            "confidence": 0.12555049359798431,
+            "class_id": 58,
+            "class_name": "potted plant"
+        },
+        {
+            "box": [
+                655,
+                36,
+                1351,
+                1192
+            ],
+            "confidence": 0.12080135941505432,
+            "class_id": 75,
+            "class_name": "vase"
+        }
+    ],
+    "1019.jpg": [
+        {
+            "box": [
+                652,
+                31,
+                1350,
+                1194
+            ],
+            "confidence": 0.3418021500110626,
+            "class_id": 39,
+            "class_name": "bottle"
+        },
+        {
+            "box": [
+                235,
+                339,
+                704,
+                1149
+            ],
+            "confidence": 0.12610173225402832,
+            "class_id": 58,
+            "class_name": "potted plant"
+        }
+    ],
+    "102.jpg": [
+        {
+            "box": [
+                386,
+                1034,
+                774,
+                1239
+            ],
+            "confidence": 0.3349868953227997,
+            "class_id": 21,
+            "class_name": "bear"
+        }
+    ],
+    "1020.jpg": [
+        {
+            "box": [
+                657,
+                35,
+                1350,
+                1198
+            ],
+            "confidence": 0.25511080026626587,
+            "class_id": 39,
+            "class_name": "bottle"
+        },
+        {
+            "box": [
+                654,
+                23,
+                1355,
+                1195
+            ],
+            "confidence": 0.1518891453742981,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                232,
+                340,
+                705,
+                1151
+            ],
+            "confidence": 0.14447569847106934,
+            "class_id": 58,
+            "class_name": "potted plant"
+        }
+    ],
+    "1021.jpg": [
+        {
+            "box": [
+                651,
+                31,
+                1349,
+                1194
+            ],
+            "confidence": 0.2731662392616272,
+            "class_id": 39,
+            "class_name": "bottle"
+        },
+        {
+            "box": [
+                652,
+                26,
+                1354,
+                1194
+            ],
+            "confidence": 0.26132431626319885,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                231,
+                340,
+                703,
+                1144
+            ],
+            "confidence": 0.13060353696346283,
+            "class_id": 58,
+            "class_name": "potted plant"
+        }
+    ],
+    "1022.jpg": [
+        {
+            "box": [
+                654,
+                33,
+                1351,
+                1194
+            ],
+            "confidence": 0.30886921286582947,
+            "class_id": 39,
+            "class_name": "bottle"
+        },
+        {
+            "box": [
+                651,
+                24,
+                1355,
+                1193
+            ],
+            "confidence": 0.11737273633480072,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1023.jpg": [
+        {
+            "box": [
+                657,
+                30,
+                1349,
+                1202
+            ],
+            "confidence": 0.283623069524765,
+            "class_id": 39,
+            "class_name": "bottle"
+        },
+        {
+            "box": [
+                656,
+                22,
+                1354,
+                1194
+            ],
+            "confidence": 0.13449135422706604,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                657,
+                30,
+                1352,
+                1193
+            ],
+            "confidence": 0.13034763932228088,
+            "class_id": 75,
+            "class_name": "vase"
+        }
+    ],
+    "1024.jpg": [
+        {
+            "box": [
+                647,
+                36,
+                1346,
+                1216
+            ],
+            "confidence": 0.2291678637266159,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1025.jpg": [
+        {
+            "box": [
+                264,
+                274,
+                353,
+                339
+            ],
+            "confidence": 0.26267802715301514,
+            "class_id": 32,
+            "class_name": "sports ball"
+        }
+    ],
+    "1026.jpg": [
+        {
+            "box": [
+                262,
+                275,
+                350,
+                340
+            ],
+            "confidence": 0.15462103486061096,
+            "class_id": 32,
+            "class_name": "sports ball"
+        }
+    ],
+    "1027.jpg": [
+        {
+            "box": [
+                261,
+                274,
+                352,
+                340
+            ],
+            "confidence": 0.16349013149738312,
+            "class_id": 32,
+            "class_name": "sports ball"
+        }
+    ],
+    "1028.jpg": [
+        {
+            "box": [
+                263,
+                275,
+                350,
+                340
+            ],
+            "confidence": 0.13735727965831757,
+            "class_id": 32,
+            "class_name": "sports ball"
+        }
+    ],
+    "1029.jpg": [
+        {
+            "box": [
+                657,
+                20,
+                1332,
+                1200
+            ],
+            "confidence": 0.11798471212387085,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "103.jpg": [],
+    "1030.jpg": [
+        {
+            "box": [
+                658,
+                22,
+                1331,
+                1203
+            ],
+            "confidence": 0.1517954021692276,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                662,
+                32,
+                1337,
+                1196
+            ],
+            "confidence": 0.1408688873052597,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1031.jpg": [
+        {
+            "box": [
+                657,
+                18,
+                1323,
+                1206
+            ],
+            "confidence": 0.14625616371631622,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                662,
+                34,
+                1336,
+                1194
+            ],
+            "confidence": 0.14434807002544403,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1032.jpg": [],
+    "1033.jpg": [],
+    "1034.jpg": [],
+    "1035.jpg": [
+        {
+            "box": [
+                649,
+                39,
+                1342,
+                1199
+            ],
+            "confidence": 0.16170558333396912,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                647,
+                35,
+                1340,
+                1202
+            ],
+            "confidence": 0.11352822929620743,
+            "class_id": 28,
+            "class_name": "suitcase"
+        }
+    ],
+    "1036.jpg": [
+        {
+            "box": [
+                645,
+                42,
+                1347,
+                1205
+            ],
+            "confidence": 0.24639423191547394,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1037.jpg": [
+        {
+            "box": [
+                651,
+                34,
+                1345,
+                1191
+            ],
+            "confidence": 0.239540696144104,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1038.jpg": [
+        {
+            "box": [
+                653,
+                40,
+                1342,
+                1197
+            ],
+            "confidence": 0.16392332315444946,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                651,
+                37,
+                1336,
+                1200
+            ],
+            "confidence": 0.10820303112268448,
+            "class_id": 28,
+            "class_name": "suitcase"
+        }
+    ],
+    "1039.jpg": [
+        {
+            "box": [
+                652,
+                40,
+                1342,
+                1198
+            ],
+            "confidence": 0.21901695430278778,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                651,
+                41,
+                1340,
+                1195
+            ],
+            "confidence": 0.11825375258922577,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                649,
+                31,
+                1340,
+                1199
+            ],
+            "confidence": 0.10146059095859528,
+            "class_id": 28,
+            "class_name": "suitcase"
+        }
+    ],
+    "104.jpg": [],
+    "1040.jpg": [
+        {
+            "box": [
+                1107,
+                1290,
+                1308,
+                1453
+            ],
+            "confidence": 0.5021836161613464,
+            "class_id": 14,
+            "class_name": "bird"
+        },
+        {
+            "box": [
+                650,
+                33,
+                1337,
+                1202
+            ],
+            "confidence": 0.12185627222061157,
+            "class_id": 28,
+            "class_name": "suitcase"
+        },
+        {
+            "box": [
+                652,
+                41,
+                1341,
+                1196
+            ],
+            "confidence": 0.10064751654863358,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1041.jpg": [
+        {
+            "box": [
+                650,
+                36,
+                1338,
+                1201
+            ],
+            "confidence": 0.13371537625789642,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                650,
+                38,
+                1341,
+                1202
+            ],
+            "confidence": 0.1230018213391304,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1042.jpg": [
+        {
+            "box": [
+                637,
+                36,
+                1340,
+                1204
+            ],
+            "confidence": 0.40207022428512573,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1043.jpg": [
+        {
+            "box": [
+                633,
+                35,
+                1342,
+                1199
+            ],
+            "confidence": 0.34256067872047424,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1044.jpg": [
+        {
+            "box": [
+                643,
+                33,
+                1342,
+                1200
+            ],
+            "confidence": 0.3298792839050293,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1045.jpg": [
+        {
+            "box": [
+                647,
+                34,
+                1342,
+                1202
+            ],
+            "confidence": 0.29765647649765015,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1046.jpg": [
+        {
+            "box": [
+                644,
+                34,
+                1342,
+                1202
+            ],
+            "confidence": 0.38691261410713196,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1047.jpg": [
+        {
+            "box": [
+                651,
+                43,
+                1339,
+                1207
+            ],
+            "confidence": 0.19253583252429962,
+            "class_id": 69,
+            "class_name": "oven"
+        },
+        {
+            "box": [
+                652,
+                45,
+                1338,
+                1207
+            ],
+            "confidence": 0.11738744378089905,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1048.jpg": [
+        {
+            "box": [
+                652,
+                48,
+                1343,
+                1209
+            ],
+            "confidence": 0.1368090957403183,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                652,
+                46,
+                1345,
+                1209
+            ],
+            "confidence": 0.11253107339143753,
+            "class_id": 69,
+            "class_name": "oven"
+        }
+    ],
+    "1049.jpg": [
+        {
+            "box": [
+                651,
+                46,
+                1340,
+                1206
+            ],
+            "confidence": 0.2093629240989685,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "105.jpg": [],
+    "1050.jpg": [
+        {
+            "box": [
+                651,
+                44,
+                1337,
+                1209
+            ],
+            "confidence": 0.18911759555339813,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1051.jpg": [
+        {
+            "box": [
+                649,
+                38,
+                1346,
+                1206
+            ],
+            "confidence": 0.1506298929452896,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                658,
+                1297,
+                798,
+                1429
+            ],
+            "confidence": 0.13022996485233307,
+            "class_id": 14,
+            "class_name": "bird"
+        },
+        {
+            "box": [
+                653,
+                42,
+                1349,
+                1205
+            ],
+            "confidence": 0.1050357073545456,
+            "class_id": 28,
+            "class_name": "suitcase"
+        }
+    ],
+    "1052.jpg": [
+        {
+            "box": [
+                652,
+                40,
+                1346,
+                1200
+            ],
+            "confidence": 0.1219138577580452,
+            "class_id": 28,
+            "class_name": "suitcase"
+        },
+        {
+            "box": [
+                649,
+                38,
+                1346,
+                1200
+            ],
+            "confidence": 0.10839502513408661,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1053.jpg": [
+        {
+            "box": [
+                645,
+                37,
+                1343,
+                1206
+            ],
+            "confidence": 0.22316642105579376,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1054.jpg": [
+        {
+            "box": [
+                650,
+                42,
+                1345,
+                1205
+            ],
+            "confidence": 0.1334526091814041,
+            "class_id": 28,
+            "class_name": "suitcase"
+        },
+        {
+            "box": [
+                651,
+                41,
+                1344,
+                1203
+            ],
+            "confidence": 0.12103193253278732,
+            "class_id": 6,
+            "class_name": "train"
+        }
+    ],
+    "1055.jpg": [
+        {
+            "box": [
+                648,
+                33,
+                1345,
+                1208
+            ],
+            "confidence": 0.14059267938137054,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                652,
+                38,
+                1347,
+                1207
+            ],
+            "confidence": 0.13310886919498444,
+            "class_id": 28,
+            "class_name": "suitcase"
+        }
+    ],
+    "1056.jpg": [],
+    "1057.jpg": [
+        {
+            "box": [
+                652,
+                46,
+                1350,
+                1200
+            ],
+            "confidence": 0.34873154759407043,
+            "class_id": 72,
+            "class_name": "refrigerator"
+        },
+        {
+            "box": [
+                1277,
+                45,
+                1734,
+                1157
+            ],
+            "confidence": 0.10146749764680862,
+            "class_id": 72,
+            "class_name": "refrigerator"
+        }
+    ],
+    "1058.jpg": [
+        {
+            "box": [
+                653,
+                42,
+                1345,
+                1207
+            ],
+            "confidence": 0.1316763162612915,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1059.jpg": [
+        {
+            "box": [
+                654,
+                47,
+                1349,
+                1200
+            ],
+            "confidence": 0.2250533550977707,
+            "class_id": 72,
+            "class_name": "refrigerator"
+        }
+    ],
+    "106.jpg": [
+        {
+            "box": [
+                441,
+                739,
+                602,
+                877
+            ],
+            "confidence": 0.2099558562040329,
+            "class_id": 14,
+            "class_name": "bird"
+        }
+    ],
+    "1060.jpg": [],
+    "1061.jpg": [],
+    "1062.jpg": [
+        {
+            "box": [
+                652,
+                42,
+                1343,
+                1202
+            ],
+            "confidence": 0.11639872193336487,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                653,
+                41,
+                1344,
+                1202
+            ],
+            "confidence": 0.11092348396778107,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1063.jpg": [
+        {
+            "box": [
+                652,
+                42,
+                1347,
+                1207
+            ],
+            "confidence": 0.14147694408893585,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1064.jpg": [
+        {
+            "box": [
+                653,
+                43,
+                1345,
+                1210
+            ],
+            "confidence": 0.1380515843629837,
+            "class_id": 6,
+            "class_name": "train"
+        },
+        {
+            "box": [
+                653,
+                40,
+                1346,
+                1209
+            ],
+            "confidence": 0.13013151288032532,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1065.jpg": [
+        {
+            "box": [
+                655,
+                37,
+                1340,
+                1196
+            ],
+            "confidence": 0.16081176698207855,
+            "class_id": 72,
+            "class_name": "refrigerator"
+        }
+    ],
+    "1066.jpg": [
+        {
+            "box": [
+                650,
+                35,
+                1340,
+                1200
+            ],
+            "confidence": 0.10340189933776855,
+            "class_id": 10,
+            "class_name": "fire hydrant"
+        }
+    ],
+    "1067.jpg": [
+        {
+            "box": [
+                652,
+                34,
+                1339,
+                1201
+            ],
+            "confidence": 0.2097807377576828,
+            "class_id": 10,
+            "class_name": "fire hydrant"
+        }
+    ],
+    "1068.jpg": [
+        {
+            "box": [
+                651,
+                32,
+                1339,
+                1199
+            ],
+            "confidence": 0.10246047377586365,
+            "class_id": 10,
+            "class_name": "fire hydrant"
+        }
+    ],
+    "1069.jpg": [
+        {
+            "box": [
+                653,
+                35,
+                1340,
+                1201
+            ],
+            "confidence": 0.12089413404464722,
+            "class_id": 10,
+            "class_name": "fire hydrant"
+        }
+    ],
+    "107.jpg": [
+        {
+            "box": [
+                477,
+                741,
+                610,
+                875
+            ],
+            "confidence": 0.3287253677845001,
+            "class_id": 14,
+            "class_name": "bird"
+        }
+    ],
+    "1070.jpg": [
+        {
+            "box": [
+                654,
+                35,
+                1338,
+                1200
+            ],
+            "confidence": 0.23610727488994598,
+            "class_id": 10,
+            "class_name": "fire hydrant"
+        }
+    ],
+    "1071.jpg": [
+        {
+            "box": [
+                656,
+                36,
+                1341,
+                1200
+            ],
+            "confidence": 0.11784444749355316,
+            "class_id": 10,
+            "class_name": "fire hydrant"
+        }
+    ],
+    "1072.jpg": [
+        {
+            "box": [
+                658,
+                37,
+                1338,
+                1205
+            ],
+            "confidence": 0.10901136696338654,
+            "class_id": 28,
+            "class_name": "suitcase"
+        }
+    ],
+    "1073.jpg": [
+        {
+            "box": [
+                658,
+                38,
+                1340,
+                1202
+            ],
+            "confidence": 0.1275760531425476,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                658,
+                35,
+                1341,
+                1199
+            ],
+            "confidence": 0.10146697610616684,
+            "class_id": 10,
+            "class_name": "fire hydrant"
+        }
+    ],
+    "1074.jpg": [
+        {
+            "box": [
+                655,
+                40,
+                1343,
+                1212
+            ],
+            "confidence": 0.1360895335674286,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                654,
+                39,
+                1343,
+                1203
+            ],
+            "confidence": 0.13178472220897675,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                652,
+                39,
+                1343,
+                1212
+            ],
+            "confidence": 0.11638154834508896,
+            "class_id": 72,
+            "class_name": "refrigerator"
+        }
+    ],
+    "1075.jpg": [
+        {
+            "box": [
+                659,
+                37,
+                1340,
+                1199
+            ],
+            "confidence": 0.13990163803100586,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                659,
+                37,
+                1340,
+                1197
+            ],
+            "confidence": 0.10414977371692657,
+            "class_id": 72,
+            "class_name": "refrigerator"
+        }
+    ],
+    "1076.jpg": [
+        {
+            "box": [
+                659,
+                29,
+                1338,
+                1200
+            ],
+            "confidence": 0.21006615459918976,
+            "class_id": 72,
+            "class_name": "refrigerator"
+        }
+    ],
+    "1077.jpg": [
+        {
+            "box": [
+                653,
+                42,
+                1341,
+                1207
+            ],
+            "confidence": 0.17839916050434113,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                652,
+                40,
+                1342,
+                1200
+            ],
+            "confidence": 0.12460804730653763,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1078.jpg": [
+        {
+            "box": [
+                655,
+                43,
+                1341,
+                1213
+            ],
+            "confidence": 0.18529380857944489,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                652,
+                40,
+                1341,
+                1203
+            ],
+            "confidence": 0.13409288227558136,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1079.jpg": [
+        {
+            "box": [
+                654,
+                40,
+                1342,
+                1212
+            ],
+            "confidence": 0.14953579008579254,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                652,
+                39,
+                1342,
+                1202
+            ],
+            "confidence": 0.12582455575466156,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "108.jpg": [],
+    "1080.jpg": [
+        {
+            "box": [
+                655,
+                39,
+                1342,
+                1213
+            ],
+            "confidence": 0.3045370876789093,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                652,
+                38,
+                1341,
+                1204
+            ],
+            "confidence": 0.11805682629346848,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1081.jpg": [
+        {
+            "box": [
+                651,
+                39,
+                1340,
+                1212
+            ],
+            "confidence": 0.22724950313568115,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                651,
+                35,
+                1340,
+                1203
+            ],
+            "confidence": 0.10033006221055984,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1082.jpg": [
+        {
+            "box": [
+                653,
+                35,
+                1342,
+                1210
+            ],
+            "confidence": 0.20374058187007904,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                651,
+                36,
+                1341,
+                1201
+            ],
+            "confidence": 0.17059217393398285,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1083.jpg": [
+        {
+            "box": [
+                652,
+                37,
+                1340,
+                1204
+            ],
+            "confidence": 0.13694724440574646,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                652,
+                40,
+                1339,
+                1209
+            ],
+            "confidence": 0.12990936636924744,
+            "class_id": 28,
+            "class_name": "suitcase"
+        },
+        {
+            "box": [
+                649,
+                39,
+                1339,
+                1209
+            ],
+            "confidence": 0.11391891539096832,
+            "class_id": 61,
+            "class_name": "toilet"
+        }
+    ],
+    "1084.jpg": [
+        {
+            "box": [
+                654,
+                41,
+                1339,
+                1209
+            ],
+            "confidence": 0.2122659534215927,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                653,
+                38,
+                1341,
+                1201
+            ],
+            "confidence": 0.1745876967906952,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1085.jpg": [
+        {
+            "box": [
+                651,
+                40,
+                1343,
+                1205
+            ],
+            "confidence": 0.16740313172340393,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                651,
+                42,
+                1343,
+                1212
+            ],
+            "confidence": 0.11225197464227676,
+            "class_id": 61,
+            "class_name": "toilet"
+        }
+    ],
+    "1086.jpg": [
+        {
+            "box": [
+                649,
+                41,
+                1339,
+                1213
+            ],
+            "confidence": 0.1595066785812378,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                647,
+                39,
+                1339,
+                1204
+            ],
+            "confidence": 0.15255460143089294,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1087.jpg": [
+        {
+            "box": [
+                654,
+                37,
+                1340,
+                1202
+            ],
+            "confidence": 0.1944952756166458,
+            "class_id": 12,
+            "class_name": "parking meter"
+        },
+        {
+            "box": [
+                656,
+                39,
+                1340,
+                1211
+            ],
+            "confidence": 0.16503430902957916,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                1431,
+                1376,
+                2048,
+                1527
+            ],
+            "confidence": 0.1360672414302826,
+            "class_id": 63,
+            "class_name": "laptop"
+        }
+    ],
+    "1088.jpg": [
+        {
+            "box": [
+                656,
+                36,
+                1341,
+                1213
+            ],
+            "confidence": 0.22547557950019836,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                654,
+                36,
+                1342,
+                1204
+            ],
+            "confidence": 0.17316849529743195,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "1089.jpg": [
+        {
+            "box": [
+                653,
+                43,
+                1339,
+                1208
+            ],
+            "confidence": 0.2621442377567291,
+            "class_id": 61,
+            "class_name": "toilet"
+        },
+        {
+            "box": [
+                652,
+                39,
+                1339,
+                1204
+            ],
+            "confidence": 0.14668406546115875,
+            "class_id": 12,
+            "class_name": "parking meter"
+        }
+    ],
+    "109.jpg": [
+        {
+            "box": [
+                637,
+                739,
+                854,
+                921
+            ],
+            "confidence": 0.39058515429496765,
+            "class_id": 14,
+            "class_name": "bird"
+        }
+    ]
+}
