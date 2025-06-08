@@ -1,0 +1,39 @@
+# Entorno virtual
+venv/
+.env/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+
+# Archivos de Jupyter
+.ipynb_checkpoints
+
+# Datos temporales / salidas de procesamiento
+*.log
+*.tmp
+*.cache
+*.npy
+*.npz
+*.csv
+*.json
+*.h5
+*.pt
+*.onnx
+
+# Directorios específicos de tu proyecto
+ena24/detections/
+ena24/features/
+ena24/images_segmented/
+ena24/images_ahe_color/
+ena24/images_for_yolo.json
+
+# Modelos descargados
+yolov8n.pt
+runs/
+
+# VS Code
+.vscode/
