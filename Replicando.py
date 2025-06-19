@@ -7,7 +7,6 @@ from tqdm import tqdm
 from collections import defaultdict
 import random
 import matplotlib.pyplot as plt
-import shutil # Importado para copiar archivos
 
 # Importar librerías para ResNet50 y MobileNet
 from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input
@@ -182,56 +181,6 @@ def extract_darknet_like_features(image_path):
         return None
 
 
-def copy_samples(source_dir, dest_dir, num_samples, selected_filenames):
-    """
-    Copia un número específico de imágenes desde un directorio fuente a un directorio de destino.
-    Prioriza los nombres de archivo en selected_filenames y luego añade aleatoriamente.
-    """
-    os.makedirs(dest_dir, exist_ok=True)
-    current_sample_count = len(os.listdir(dest_dir))
-    
-    if current_sample_count >= num_samples:
-        print(f"Ya existen {current_sample_count} muestras en {dest_dir}. No se copiarán más.")
-        return
-
-    all_source_images = [f for f in os.listdir(source_dir) if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
-    random.shuffle(all_source_images) # Mezclar para tomar aleatoriamente si es necesario
-
-    files_to_copy = []
-    
-    # 1. Priorizar archivos seleccionados
-    for filename in selected_filenames:
-        if filename in all_source_images and os.path.exists(os.path.join(source_dir, filename)):
-            if filename not in [f for f in os.listdir(dest_dir)]: # Evitar duplicados si ya están en dest_dir
-                files_to_copy.append(filename)
-                if len(files_to_copy) >= num_samples:
-                    break
-    
-    # 2. Rellenar con archivos aleatorios si no se alcanzó el número de muestras
-    if len(files_to_copy) < num_samples:
-        for filename in all_source_images:
-            if filename not in files_to_copy and os.path.exists(os.path.join(source_dir, filename)):
-                if filename not in [f for f in os.listdir(dest_dir)]:
-                    files_to_copy.append(filename)
-                    if len(files_to_copy) >= num_samples:
-                        break
-
-    copied_count = 0
-    for filename in files_to_copy:
-        if copied_count >= num_samples:
-            break
-        src_path = os.path.join(source_dir, filename)
-        dst_path = os.path.join(dest_dir, filename)
-        if not os.path.exists(dst_path):
-            try:
-                shutil.copy(src_path, dst_path)
-                copied_count += 1
-            except Exception as e:
-                print(f"Error al copiar imagen de muestra {filename} a {dest_dir}: {e}")
-    
-    print(f"Copiadas {copied_count} imágenes de muestra en {dest_dir}.")
-
-
 # ----------------------------------------------------
 # --- CÓDIGO PRINCIPAL (DENTRO DEL MAIN GUARD) ---
 # ----------------------------------------------------
@@ -250,27 +199,6 @@ if __name__ == '__main__':
     else:
         print("No se detectaron GPUs o no están configuradas para TensorFlow.")
 
-    # --- Configuración de imágenes de muestra ---
-    num_sample_images = 5 # Cantidad de imágenes de muestra a guardar por paso
-
-    # Define las imágenes específicas que quieres ver como muestras
-    # ¡IMPORTANTE! Asegúrate de que estos nombres de archivo existan en tus directorios de datos.
-    # Puedes añadir o quitar nombres aquí. Si pones más de `num_sample_images`,
-    # solo se copiarán las primeras que se encuentren hasta el límite.
-    selected_sample_filenames = [
-        "1121.jpg",
-        "1197.jpg",
-        "1228.jpg",
-        "1279.jpg",
-        "1295.jpg",
-    ]
-    print(f"\nSe intentarán mostrar hasta {num_sample_images} imágenes de muestra en cada paso.")
-    if selected_sample_filenames:
-        print(f"Priorizando las siguientes imágenes para las muestras: {', '.join(selected_sample_filenames)}")
-    else:
-        print("No se especificaron imágenes de muestra, se seleccionarán aleatoriamente.")
-    # -------------------------------------------
-
 
     # ==============================================================================
     # --- Paso 1: Descargar imágenes filtradas ---
@@ -282,11 +210,8 @@ if __name__ == '__main__':
     download_dir = "ena24/images"
     metadata_file_path = "ena24/annotations/metadata.json"
     
-    # Directorio para imágenes de muestra del Paso 1
-    sample_download_dir = "ena24/sample_images_step1"
-    os.makedirs(sample_download_dir, exist_ok=True)
-
     # Verificar si el directorio de imágenes ya tiene contenido suficiente
+    # para considerar que la descarga ya se realizó
     min_images_for_download_check = 1900 # Si esperamos 2000, 1900 es un buen umbral
     
     if os.path.exists(download_dir) and len(os.listdir(download_dir)) >= min_images_for_download_check:
@@ -303,13 +228,9 @@ if __name__ == '__main__':
              except Exception as e:
                  print(f"Error al descargar metadata.json: {e}. No se podrá continuar sin este archivo.")
                  exit()
-        
-        # Copiar imágenes de muestra si no están ya en el directorio de muestras
-        copy_samples(download_dir, sample_download_dir, num_sample_images, selected_sample_filenames)
-
     else:
         cuadrupedo_ids = {
-            1, 2, 3, 5, 6, 7, 10, 11, 12, 13,
+            2, 3, 5, 6, 7, 10, 11, 12, 13,
             14, 15, 16, 19, 20, 21, 22
         }
 
@@ -343,10 +264,7 @@ if __name__ == '__main__':
         os.makedirs(download_dir, exist_ok=True)
 
         print(f"Descargando imágenes con cuadrúpedos en {download_dir}...")
-        
-        downloaded_count_total = 0
-        
-        for i, img in tqdm(enumerate(filtered_images[:300])): # Limitar a 2000 como en el original
+        for img in tqdm(filtered_images[:300]):
             file_name = img["file_name"]
             url = base_url + file_name
             save_path = os.path.join(download_dir, file_name)
@@ -357,7 +275,6 @@ if __name__ == '__main__':
                 for attempt in range(retries):
                     try:
                         urllib.request.urlretrieve(url, save_path)
-                        downloaded_count_total += 1
                         break
                     except Exception as e:
                         print(f"Error al descargar {file_name} (Intento {attempt + 1}/{retries}): {e}")
@@ -369,15 +286,10 @@ if __name__ == '__main__':
                 if test_img is None:
                     print(f"Advertencia: Archivo descargado {file_name} no es una imagen válida. Eliminando.")
                     os.remove(save_path)
-                    continue # No procesar más si la imagen es inválida
             else:
-                downloaded_count_total += 1 # Contar imágenes que ya existían también
+                pass
 
-        print(f"Descarga de imágenes completada. Descargadas: {downloaded_count_total}")
-        
-        # Después de la descarga principal, copiar las muestras
-        copy_samples(download_dir, sample_download_dir, num_sample_images, selected_sample_filenames)
-
+        print(f"Descarga de imágenes completada. Descargadas: {len([f for f in os.listdir(download_dir) if os.path.isfile(os.path.join(download_dir, f))])}")
 
     original_images_dir = "ena24/images"
     ahe_color_images_dir = "ena24/images_ahe_color"
@@ -392,10 +304,6 @@ if __name__ == '__main__':
 
     output_dir_ahe_color = "ena24/images_ahe_color"
     os.makedirs(output_dir_ahe_color, exist_ok=True)
-    
-    # Directorio para imágenes de muestra del Paso 2
-    sample_ahe_color_dir = "ena24/sample_images_step2"
-    os.makedirs(sample_ahe_color_dir, exist_ok=True)
 
     image_files_clahe = []
     for root, _, files in os.walk(download_dir):
@@ -418,30 +326,19 @@ if __name__ == '__main__':
 
     if all_clahe_exist and len(os.listdir(output_dir_ahe_color)) == len(image_files_clahe):
         print(f"Todas las imágenes CLAHE ya existen en {output_dir_ahe_color}. Saltando aplicación de CLAHE.")
-        # Copiar imágenes de muestra CLAHE
-        copy_samples(output_dir_ahe_color, sample_ahe_color_dir, num_sample_images, selected_sample_filenames)
-
     else:
         print(f"Aplicando CLAHE a {len(image_files_clahe)} imágenes a color...")
-        clahe_tasks = []
-        for rel_path in image_files_clahe:
+        for rel_path in tqdm(image_files_clahe):
             input_path = os.path.join(download_dir, rel_path)
             output_path = os.path.join(output_dir_ahe_color, rel_path)
             os.makedirs(os.path.dirname(output_path), exist_ok=True)
             
             if not os.path.exists(output_path):
-                clahe_tasks.append((input_path, output_path))
-        
-        if clahe_tasks:
-            # Puedes usar multiprocessing aquí también si CLAHE es muy lento
-            # pero para este ejemplo simple, lo haremos secuencial
-            for input_p, output_p in tqdm(clahe_tasks):
-                apply_clahe_color(input_p, output_p)
-        
-        print(f"Preprocesamiento (CLAHE) completado. Las imágenes están en: {output_dir_ahe_color}")
-        # Copiar imágenes de muestra CLAHE después de que todo el procesamiento haya terminado
-        copy_samples(output_dir_ahe_color, sample_ahe_color_dir, num_sample_images, selected_sample_filenames)
+                apply_clahe_color(input_path, output_path)
+            else:
+                pass
 
+        print(f"Preprocesamiento (CLAHE) completado. Las imágenes están en: {output_dir_ahe_color}")
 
     # ==============================================================================
     # --- Paso 3: Segmentación Intermedia con Superpíxeles y K-Means ---
@@ -453,10 +350,6 @@ if __name__ == '__main__':
 
     output_dir_segmented = "ena24/images_segmented_kmeans"
     os.makedirs(output_dir_segmented, exist_ok=True)
-    
-    # Directorio para imágenes de muestra del Paso 3
-    sample_segmented_dir = "ena24/sample_images_step3"
-    os.makedirs(sample_segmented_dir, exist_ok=True)
 
     images_for_segmentation = [f for f in os.listdir(ahe_color_images_dir) if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
 
@@ -473,9 +366,6 @@ if __name__ == '__main__':
 
     if all_segmented_exist and len(os.listdir(output_dir_segmented)) == len(images_for_segmentation):
         print(f"Todas las imágenes segmentadas ya existen en {output_dir_segmented}. Saltando segmentación.")
-        # Copiar imágenes de muestra segmentadas
-        copy_samples(output_dir_segmented, sample_segmented_dir, num_sample_images, selected_sample_filenames)
-
     else:
         print(f"Aplicando segmentación intermedia a {len(images_for_segmentation)} imágenes desde {ahe_color_images_dir}...")
 
@@ -499,9 +389,6 @@ if __name__ == '__main__':
             print("Todas las imágenes de segmentación ya existen o no hay imágenes nuevas para procesar.")
 
         print(f"Segmentación intermedia completada. Imágenes segmentadas en: {output_dir_segmented}")
-        # Copiar imágenes de muestra segmentadas después de que todo el procesamiento haya terminado
-        copy_samples(output_dir_segmented, sample_segmented_dir, num_sample_images, selected_sample_filenames)
-
 
     segmented_images_dir = "ena24/images_segmented_kmeans"
 
@@ -542,6 +429,7 @@ if __name__ == '__main__':
     if not image_features: # Si las características no se cargaron o están incompletas/corruptas
         print("Cargando modelo ResNet50...")
         try:
+            # ¡CORRECCIÓN AQUÍ! Elimina la palabra 'global'
             base_model_resnet = ResNet50(weights='imagenet', include_top=False, pooling='avg')
             print("ResNet50 cargado exitosamente.")
         except Exception as e:
@@ -551,6 +439,7 @@ if __name__ == '__main__':
 
         print("Cargando modelo para características Darknet (usando MobileNet como aproximación)...")
         try:
+            # ¡CORRECCIÓN AQUÍ! Elimina la palabra 'global'
             base_model_darknet_like = MobileNet(weights='imagenet', include_top=False, pooling='avg')
             print("MobileNet cargado exitosamente como aproximación a Darknet.")
         except Exception as e:
@@ -656,7 +545,7 @@ if __name__ == '__main__':
 
             if len(combined_features) > 0:
                 X.append(np.array(combined_features))
-                y.append(1) # Asumimos que todas las imágenes con características son "positivas" para pasar a YOLO
+                y.append(1)
                 image_filenames_for_classification.append(filename)
             else:
                 print(f"Advertencia: Saltando imagen {filename} en el clasificador debido a características faltantes o vacías.")
@@ -671,23 +560,35 @@ if __name__ == '__main__':
             print(f"Número de muestras de características cargadas: {X.shape[0]}")
             print(f"Dimensiones de cada vector de características: {X.shape[1]}")
 
-            # Nota: Si todas tus 'y' son 1, train_test_split con stratify fallará.
-            # Solo usa stratify si hay al menos dos clases únicas.
             stratify_param = y if len(np.unique(y)) > 1 else None
-            
-            # Para este escenario, dado que 'y' es todo 1, la clasificación es trivial
-            # y el objetivo principal es seleccionar las imágenes que tienen características.
-            # Si tu clasificación real incluyera negativos (0), esta parte sería más relevante.
-            
-            # Para fines de demostración de "clasificación" que filtra:
-            # Si todas las imágenes tienen "cuadrúpedos" (y=1), el clasificador siempre predecirá 1.
-            # En un caso real, 'y' vendría de etiquetas de "es animal" vs "no es animal"
-            # para reducir el número de imágenes a procesar por YOLO.
-            
-            # Simplicado para este caso donde todas son '1':
-            images_for_yolo = image_filenames_for_classification # Todas las imágenes con características se consideran para YOLO
+            X_train, X_test, y_train, y_test, filenames_train, filenames_test = train_test_split(
+                X, y, image_filenames_for_classification, test_size=0.2, random_state=42, stratify=stratify_param
+            )
 
-            print(f"De {len(image_filenames_for_classification)} imágenes, {len(images_for_yolo)} imágenes serán pasadas a YOLOv8 (sin filtrado real si todas las etiquetas son '1').")
+            print("Entrenando el clasificador Random Forest...")
+            classifier = RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)
+            classifier.fit(X_train, y_train)
+            print("Clasificador entrenado.")
+
+            y_pred = classifier.predict(X_test)
+
+            print("\nResultados del Clasificador Inicial:")
+            print(f"Precisión (Accuracy): {accuracy_score(y_test, y_pred):.4f}")
+            print("Reporte de Clasificación:")
+            if len(np.unique(y_test)) > 1:
+                print(classification_report(y_test, y_pred, target_names=['No Animal', 'Animal']))
+            else:
+                print("Solo una clase presente en el conjunto de prueba, no se puede generar un reporte de clasificación completo.")
+
+            print("\nSimulando la fase de filtrado para YOLOv8...")
+            predicted_labels_all_images = classifier.predict(X)
+
+            images_for_yolo = [
+                filename for i, filename in enumerate(image_filenames_for_classification)
+                if predicted_labels_all_images[i] == 1
+            ]
+
+            print(f"De {len(image_filenames_for_classification)} imágenes, {len(images_for_yolo)} imágenes serán pasadas a YOLOv8.")
 
         try:
             with open(output_filtered_list_path, 'w') as f:
@@ -707,8 +608,8 @@ if __name__ == '__main__':
     print("--- Paso 6: Detección con YOLOv8 en Cascada ---")
     print("=============================================")
 
-    input_dir_for_yolo_inference = ahe_color_images_dir # Las imágenes CLAHE suelen ser las de entrada
-    output_dir_cascaded_detections = "ena24/cascaded_detections" # Aquí se guardan las imágenes con bboxes y el JSON
+    input_dir_for_yolo_inference = ahe_color_images_dir
+    output_dir_cascaded_detections = "ena24/cascaded_detections"
     os.makedirs(output_dir_cascaded_detections, exist_ok=True)
     output_cascaded_detections_file = os.path.join(output_dir_cascaded_detections, "yolov8_cascaded_detections.json")
 
@@ -755,8 +656,6 @@ if __name__ == '__main__':
         else:
             print("Todas las imágenes filtradas ya han sido procesadas por YOLOv8 Cascaded.")
         print("El proceso de detección de YOLOv8 Cascaded se saltará.")
-        # Incluso si se salta el procesamiento, intentar copiar las muestras de YOLO si ya existen en la carpeta
-        copy_samples(output_dir_cascaded_detections, output_dir_cascaded_detections, num_sample_images, selected_sample_filenames)
     else:
         print("Cargando modelos YOLOv8 para la cascada (yolov8n.pt para grueso, yolov8s.pt para refinado)...")
         try:
@@ -770,10 +669,6 @@ if __name__ == '__main__':
 
         print(f"Iniciando la detección de objetos con YOLOv8 en Cascada en {len(images_pending_yolo)} imágenes (pendientes)...")
 
-        # Esto asegura que las imágenes con bounding boxes se guarden solo para las muestras seleccionadas
-        # El resto de las imágenes solo tendrán sus resultados en el JSON.
-        num_yolo_samples_saved = 0
-        
         for filename in tqdm(images_pending_yolo):
             img_path_original = os.path.join(input_dir_for_yolo_inference, filename)
 
@@ -861,22 +756,17 @@ if __name__ == '__main__':
 
                         current_image_detections.append(det)
 
-                        # Si es una de las imágenes de muestra, dibuja y guarda
-                        if filename in selected_sample_filenames and num_yolo_samples_saved < num_sample_images:
-                            color = (0, 255, 0)
-                            cv2.rectangle(img_to_draw_on, (x1, y1), (x2, y2), color, 2)
-                            label = f"{class_name}: {confidence:.2f}"
-                            text_y = max(y1 - 10, 15)
-                            cv2.putText(img_to_draw_on, label, (x1, text_y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+                        color = (0, 255, 0)
+                        cv2.rectangle(img_to_draw_on, (x1, y1), (x2, y2), color, 2)
+                        label = f"{class_name}: {confidence:.2f}"
+                        text_y = max(y1 - 10, 15)
+                        cv2.putText(img_to_draw_on, label, (x1, text_y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
                 
                     cascaded_detection_results[filename] = current_image_detections
 
-                    # Guardar la imagen con bboxes si es una de las muestras seleccionadas
-                    if filename in selected_sample_filenames and num_yolo_samples_saved < num_sample_images:
-                        output_detection_img_path = os.path.join(output_dir_cascaded_detections, filename)
-                        os.makedirs(os.path.dirname(output_detection_img_path), exist_ok=True)
-                        cv2.imwrite(output_detection_img_path, img_to_draw_on)
-                        num_yolo_samples_saved += 1 # Incrementar solo si se guardó una muestra seleccionada
+                    output_detection_img_path = os.path.join(output_dir_cascaded_detections, filename)
+                    os.makedirs(os.path.dirname(output_detection_img_path), exist_ok=True)
+                    cv2.imwrite(output_detection_img_path, img_to_draw_on)
                 else:
                     cascaded_detection_results[filename] = [] # Registrar como sin detecciones
 
@@ -893,15 +783,8 @@ if __name__ == '__main__':
         except Exception as e:
             print(f"Error al guardar los resultados de detección en JSON: {e}")
 
-        # Después de la detección, si aún no se han guardado suficientes muestras seleccionadas,
-        # o si la lista de seleccionadas era muy corta, rellenar con aleatorias de la salida de YOLO.
-        if num_yolo_samples_saved < num_sample_images:
-            copy_samples(output_dir_cascaded_detections, output_dir_cascaded_detections, num_sample_images, selected_sample_filenames)
-
 
     print("\n¡El script ha completado todos los pasos, incluyendo la detección en cascada con YOLOv8!")
-    print("\nPara visualizar los resultados:")
-    print(f"- **Paso 1 (Originales):** Revisa '{sample_download_dir}'")
-    print(f"- **Paso 2 (CLAHE):** Revisa '{sample_ahe_color_dir}'")
-    print(f"- **Paso 3 (Segmentadas):** Revisa '{sample_segmented_dir}'")
-    print(f"- **Paso 6 (Detecciones YOLOv8):** Revisa '{output_dir_cascaded_detections}' (imágenes con bounding boxes) y '{output_cascaded_detections_file}' (JSON de resultados).")
+    print("Puedes revisar las imágenes con detecciones y el archivo JSON de resultados en la carpeta 'ena24/cascaded_detections'.")
+
+    
